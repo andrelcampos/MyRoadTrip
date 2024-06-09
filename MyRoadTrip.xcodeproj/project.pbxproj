@@ -59,6 +59,7 @@
 		87CE4D2D2C151BBC00A3CF63 /* TripAdvisorServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAdvisorServices.swift; sourceTree = "<group>"; };
 		87CE4D2F2C151BCA00A3CF63 /* GoogleRoutesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleRoutesServices.swift; sourceTree = "<group>"; };
 		87CE4D322C15CF5800A3CF63 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		87CE4D342C15FD7000A3CF63 /* ConfigFile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigFile.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				87CE4D322C15CF5800A3CF63 /* StringUtils.swift */,
+				87CE4D342C15FD7000A3CF63 /* ConfigFile.xcconfig */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -354,6 +356,7 @@
 /* Begin XCBuildConfiguration section */
 		87CE4D122C110F6C00A3CF63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87CE4D342C15FD7000A3CF63 /* ConfigFile.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -417,6 +420,7 @@
 		};
 		87CE4D132C110F6C00A3CF63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87CE4D342C15FD7000A3CF63 /* ConfigFile.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;

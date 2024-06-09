@@ -9,7 +9,7 @@ import Foundation
 
 class OpenAIServices {
     
-    static let apiKey = "sk-proj-Hla1DzoJPVGA6QVxnc3WT3BlbkFJOz6XaROHeyIURU10qEZr"
+    static let apiKey = Bundle.main.object(forInfoDictionaryKey: "OPENAI_API_KEY") as? String ?? "error"
     static let modelID = "gpt-4o"
     static let origem = "Canoas"
     static let destino = "Buenos Aires"

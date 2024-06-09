@@ -1,0 +1,11 @@
+//
+//  ConfigFile.xcconfig
+//  MyRoadTrip
+//
+//  Created by Andre Campos on 09/06/24.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+OPENAI_API_KEY = sk-proj-Hla1DzoJPVGA6QVxnc3WT3BlbkFJOz6XaROHeyIURU10qEZr

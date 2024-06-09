@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let testing: ServiceToTest = .google
+        let testing: ServiceToTest = .gpt
         
         switch testing {
         case .gpt:
