@@ -8,6 +8,6 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-OPENAI_API_KEY = sk-proj-Hla1DzoJPVGA6QVxnc3WT3BlbkFJOz6XaROHeyIURU10qEZr
+OPENAI_API_KEY = sk-proj-C6xYasVCVr8a0DxoDl9RT3BlbkFJj9HjIQyVioDiskmDoYt7
 GOOGLE_API_KEY = AIzaSyB9wxh4HHR0JH1kepbT4DIG_BaltYJqAsc
-ADVISOR_API_KEY = nopeToo
+ADVISOR_API_KEY = 25DE0480CA2D4C0D9D47C6BDCD560E07
