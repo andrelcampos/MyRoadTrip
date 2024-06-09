@@ -29,10 +29,18 @@ class ViewController: UIViewController {
 //                guard let route = route else { return }
 //                print(route)
 //            }
-            GoogleRoutesServices.getDetailedRoute(from: GoogleRoutesServices.listOfCities[0],
-                                                  to: GoogleRoutesServices.listOfCities[1]) { detailedRoute in
-                guard let route = detailedRoute else { return }
-                print(route)
+//            GoogleRoutesServices.getDetailedRoute(from: GoogleRoutesServices.listOfCities[0],
+//                                                  to: GoogleRoutesServices.listOfCities[1]) { detailedRoute in
+//                guard 
+//                    let route = detailedRoute,
+//                    let location = route.routes.first?.legs.last?.endLocation.latLng
+//                else { return }
+//                print(route)
+//            }
+            let location = GoogleRoutesServices.LatLong(latitude: -31.7700224, longitude: -52.3313353)
+            GooglePlacesServices.getPlacesAround(location) { places in
+                guard let places = places else { return }
+                print(places)
             }
         case .advisor:
             break

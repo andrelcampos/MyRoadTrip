@@ -68,11 +68,6 @@ class GoogleRoutesServices {
         var request = getRequest()
         request.setValue("routes.localizedValues,routes.legs,routes.warnings,routes.description", forHTTPHeaderField: "X-Goog-FieldMask")
         
-        let localizedValues: LocalizedValues
-        let legs: [Leg]
-        let warnings: [String]
-        let description: String
-        
         let origin = WayPoint(address: origin)
         let destination = WayPoint(address: destination)
         let body = RouteRequest(origin: origin,
@@ -102,7 +97,6 @@ class GoogleRoutesServices {
             }
             
             do {
-                let jsonResponde = try JSONSerialization.jsonObject(with: data)
                 let routeResponse = try JSONDecoder().decode(DetailedRouteResponse.self, from: data)
                 completion(routeResponse)
             }
@@ -214,7 +208,7 @@ extension GoogleRoutesServices {
         let latLng: LatLong
     }
     
-    struct LatLong: Decodable {
+    struct LatLong: Codable {
         let latitude: Double
         let longitude: Double
     }

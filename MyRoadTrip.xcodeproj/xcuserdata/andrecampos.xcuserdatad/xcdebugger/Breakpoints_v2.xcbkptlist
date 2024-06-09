@@ -87,47 +87,47 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CC865947-59A6-4718-A3FB-BBE66C02B89A"
+            uuid = "1C637C37-6147-42E8-AC6B-4424DC24EE12"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyRoadTrip/Services/GoogleRoutesServices.swift"
+            filePath = "MyRoadTrip/Services/GooglePlacesServices.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "getDetailedRoute(from:to:completion:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getPlacesAround(_:completion:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "CC865947-59A6-4718-A3FB-BBE66C02B89A - 4b39acad15fac498"
+                  uuid = "1C637C37-6147-42E8-AC6B-4424DC24EE12 - c5aedab75848badf"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static MyRoadTrip.GoogleRoutesServices.getDetailedRoute(from: Swift.String, to: Swift.String, completion: (Swift.Optional&lt;MyRoadTrip.GoogleRoutesServices.DetailedRouteResponse&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static MyRoadTrip.GooglePlacesServices.getPlacesAround(_: MyRoadTrip.GoogleRoutesServices.LatLong, completion: (Swift.Optional&lt;MyRoadTrip.GooglePlacesServices.PlaceResponse&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "MyRoadTrip"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Services/GoogleRoutesServices.swift"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Services/GooglePlacesServices.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "1888">
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1256">
                </Location>
                <Location
-                  uuid = "CC865947-59A6-4718-A3FB-BBE66C02B89A - 4b39acad15fac498"
+                  uuid = "1C637C37-6147-42E8-AC6B-4424DC24EE12 - c5aedab75848badf"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static MyRoadTrip.GoogleRoutesServices.getDetailedRoute(from: Swift.String, to: Swift.String, completion: (Swift.Optional&lt;MyRoadTrip.GoogleRoutesServices.DetailedRouteResponse&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in static MyRoadTrip.GooglePlacesServices.getPlacesAround(_: MyRoadTrip.GoogleRoutesServices.LatLong, completion: (Swift.Optional&lt;MyRoadTrip.GooglePlacesServices.PlaceResponse&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "MyRoadTrip"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Services/GoogleRoutesServices.swift"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Services/GooglePlacesServices.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
-                  offsetFromSymbolStart = "1256">
+                  startingLineNumber = "55"
+                  endingLineNumber = "55"
+                  offsetFromSymbolStart = "1352">
                </Location>
             </Locations>
          </BreakpointContent>

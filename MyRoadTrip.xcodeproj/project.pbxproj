@@ -18,9 +18,10 @@
 		87CE4D0F2C110F6C00A3CF63 /* MyRoadTripUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4D0E2C110F6C00A3CF63 /* MyRoadTripUITests.swift */; };
 		87CE4D112C110F6C00A3CF63 /* MyRoadTripUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4D102C110F6C00A3CF63 /* MyRoadTripUITestsLaunchTests.swift */; };
 		87CE4D212C11198E00A3CF63 /* OpenAIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4D202C11198E00A3CF63 /* OpenAIServices.swift */; };
-		87CE4D2E2C151BBC00A3CF63 /* TripAdvisorServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4D2D2C151BBC00A3CF63 /* TripAdvisorServices.swift */; };
 		87CE4D302C151BCA00A3CF63 /* GoogleRoutesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4D2F2C151BCA00A3CF63 /* GoogleRoutesServices.swift */; };
 		87CE4D332C15CF5800A3CF63 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4D322C15CF5800A3CF63 /* StringUtils.swift */; };
+		87CE4D362C164D1C00A3CF63 /* GooglePlacesServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4D352C164D1C00A3CF63 /* GooglePlacesServices.swift */; };
+		87CE4D382C165AD300A3CF63 /* client_903324826609-pf3h5v2u958ge1ltthl2qjv0tf2779ko.apps.googleusercontent.com.plist in Resources */ = {isa = PBXBuildFile; fileRef = 87CE4D372C165AD300A3CF63 /* client_903324826609-pf3h5v2u958ge1ltthl2qjv0tf2779ko.apps.googleusercontent.com.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,10 +57,11 @@
 		87CE4D0E2C110F6C00A3CF63 /* MyRoadTripUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoadTripUITests.swift; sourceTree = "<group>"; };
 		87CE4D102C110F6C00A3CF63 /* MyRoadTripUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRoadTripUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		87CE4D202C11198E00A3CF63 /* OpenAIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIServices.swift; sourceTree = "<group>"; };
-		87CE4D2D2C151BBC00A3CF63 /* TripAdvisorServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAdvisorServices.swift; sourceTree = "<group>"; };
 		87CE4D2F2C151BCA00A3CF63 /* GoogleRoutesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleRoutesServices.swift; sourceTree = "<group>"; };
 		87CE4D322C15CF5800A3CF63 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		87CE4D342C15FD7000A3CF63 /* ConfigFile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigFile.xcconfig; sourceTree = "<group>"; };
+		87CE4D352C164D1C00A3CF63 /* GooglePlacesServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GooglePlacesServices.swift; sourceTree = "<group>"; };
+		87CE4D372C165AD300A3CF63 /* client_903324826609-pf3h5v2u958ge1ltthl2qjv0tf2779ko.apps.googleusercontent.com.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "client_903324826609-pf3h5v2u958ge1ltthl2qjv0tf2779ko.apps.googleusercontent.com.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				87CE4CF62C110F6C00A3CF63 /* Assets.xcassets */,
 				87CE4CF82C110F6C00A3CF63 /* LaunchScreen.storyboard */,
 				87CE4CFB2C110F6C00A3CF63 /* Info.plist */,
+				87CE4D372C165AD300A3CF63 /* client_903324826609-pf3h5v2u958ge1ltthl2qjv0tf2779ko.apps.googleusercontent.com.plist */,
 				87CE4CF32C110F6A00A3CF63 /* MyRoadTrip.xcdatamodeld */,
 			);
 			path = MyRoadTrip;
@@ -146,7 +149,7 @@
 			children = (
 				87CE4D202C11198E00A3CF63 /* OpenAIServices.swift */,
 				87CE4D2F2C151BCA00A3CF63 /* GoogleRoutesServices.swift */,
-				87CE4D2D2C151BBC00A3CF63 /* TripAdvisorServices.swift */,
+				87CE4D352C164D1C00A3CF63 /* GooglePlacesServices.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87CE4D382C165AD300A3CF63 /* client_903324826609-pf3h5v2u958ge1ltthl2qjv0tf2779ko.apps.googleusercontent.com.plist in Resources */,
 				87CE4CFA2C110F6C00A3CF63 /* LaunchScreen.storyboard in Resources */,
 				87CE4CF72C110F6C00A3CF63 /* Assets.xcassets in Resources */,
 				87CE4CF22C110F6A00A3CF63 /* Main.storyboard in Resources */,
@@ -296,7 +300,7 @@
 				87CE4CEB2C110F6A00A3CF63 /* AppDelegate.swift in Sources */,
 				87CE4CF52C110F6A00A3CF63 /* MyRoadTrip.xcdatamodeld in Sources */,
 				87CE4D332C15CF5800A3CF63 /* StringUtils.swift in Sources */,
-				87CE4D2E2C151BBC00A3CF63 /* TripAdvisorServices.swift in Sources */,
+				87CE4D362C164D1C00A3CF63 /* GooglePlacesServices.swift in Sources */,
 				87CE4CED2C110F6A00A3CF63 /* SceneDelegate.swift in Sources */,
 				87CE4D212C11198E00A3CF63 /* OpenAIServices.swift in Sources */,
 			);
