@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let testing: ServiceToTest = .gpt
+        let testing: ServiceToTest = .google
         
         switch testing {
         case .gpt:
@@ -25,7 +25,15 @@ class ViewController: UIViewController {
                 print(trip)
             }
         case .google:
-            break
+//            GoogleRoutesServices.getGeneralRoute(from: GoogleRoutesServices.listOfCities) { route in
+//                guard let route = route else { return }
+//                print(route)
+//            }
+            GoogleRoutesServices.getDetailedRoute(from: GoogleRoutesServices.listOfCities[0],
+                                                  to: GoogleRoutesServices.listOfCities[1]) { detailedRoute in
+                guard let route = detailedRoute else { return }
+                print(route)
+            }
         case .advisor:
             break
         }

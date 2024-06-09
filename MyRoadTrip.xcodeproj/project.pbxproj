@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				87CE4D312C15CF3F00A3CF63 /* Application */,
-				87CE4D1D2C110FB100A3CF63 /* Requests */,
+				87CE4D1D2C110FB100A3CF63 /* Services */,
 				87CE4CEA2C110F6A00A3CF63 /* AppDelegate.swift */,
 				87CE4CEC2C110F6A00A3CF63 /* SceneDelegate.swift */,
 				87CE4CEE2C110F6A00A3CF63 /* ViewController.swift */,
@@ -141,14 +141,14 @@
 			path = MyRoadTripUITests;
 			sourceTree = "<group>";
 		};
-		87CE4D1D2C110FB100A3CF63 /* Requests */ = {
+		87CE4D1D2C110FB100A3CF63 /* Services */ = {
 			isa = PBXGroup;
 			children = (
 				87CE4D202C11198E00A3CF63 /* OpenAIServices.swift */,
-				87CE4D2D2C151BBC00A3CF63 /* TripAdvisorServices.swift */,
 				87CE4D2F2C151BCA00A3CF63 /* GoogleRoutesServices.swift */,
+				87CE4D2D2C151BBC00A3CF63 /* TripAdvisorServices.swift */,
 			);
-			path = Requests;
+			path = Services;
 			sourceTree = "<group>";
 		};
 		87CE4D312C15CF3F00A3CF63 /* Application */ = {

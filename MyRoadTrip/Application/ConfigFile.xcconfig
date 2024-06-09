@@ -9,3 +9,5 @@
 // https://help.apple.com/xcode/#/dev745c5c974
 
 OPENAI_API_KEY = sk-proj-Hla1DzoJPVGA6QVxnc3WT3BlbkFJOz6XaROHeyIURU10qEZr
+GOOGLE_API_KEY = AIzaSyB9wxh4HHR0JH1kepbT4DIG_BaltYJqAsc
+ADVISOR_API_KEY = nopeToo
