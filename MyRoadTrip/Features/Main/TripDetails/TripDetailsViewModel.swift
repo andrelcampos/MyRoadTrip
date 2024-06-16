@@ -14,6 +14,7 @@ class TripDetailsViewModel {
     
     let trip: TripModel
     
+    let title = "Rota"
     lazy var headerTitle: String = {
         "Sua viagem \nde \(trip.origin) \npara \(trip.destination)"
     }()

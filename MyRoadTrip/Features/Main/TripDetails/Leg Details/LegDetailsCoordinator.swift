@@ -32,28 +32,31 @@ class LegDetailsCoordinator: BaseCoordinator {
         }
     }
     
-    private func goToStepByStep(_ steps: [StepModel]) {
-        // CALL STEP BY STEP VIEW CONTROLLER
+    private func goToStepByStep(to route: RouteModel) {
+        StepByStepCoordinator(nav: navigation, route: route).start()
     }
     
     private func goToStartDriving(location: LatLong) {
-        if UIApplication.shared.canOpenURL(URL(string: "https://waze.com/ul")!) {
-            // Waze is installed. Launch Waze and start navigation
-            let urlStr = String(format: "https://waze.com/ul?ll=%f,%f&navigate=yes", location.latitude, location.longitude)
-            UIApplication.shared.open(URL(string: urlStr)!)
-        }
+        CommomMethods.openWaze(with: location)
     }
     
     private func goToWhatToDo(location: LatLong) {
-        GooglePlacesServices.getPlacesAround(location) { response in
-            // CALL PLACES VIEW CONTROLLER
+        GooglePlacesServices.getAttractionsAround(location) { response in
+            guard let model = response?.places else { return }
+            PlacesListCoordinator(nav: self.navigation,
+                                  places: model,
+                                  ofType: .attraction,
+                                  in: self.route.destination).start()
         }
     }
     
     private func goToWhereToStay(location: LatLong) {
-        //www.google.com/maps/search/Hotéis/@-29.9113182,-51.1799296,11
-        guard let url = URL(string: "www.google.com/maps/search/Hoteis/@\(location.latitude),\(location.longitude),11z") else { return }
-        
-        UIApplication.shared.open(url)
+        GooglePlacesServices.getHotelsAround(location) { response in
+            guard let model = response?.places else { return }
+            PlacesListCoordinator(nav: self.navigation,
+                                  places: model,
+                                  ofType: .hotel,
+                                  in: self.route.destination).start()
+        }
     }
 }

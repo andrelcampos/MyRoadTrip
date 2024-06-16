@@ -79,20 +79,27 @@ class TextStyle {
 
 extension TextStyle {
     
+    /// Font: montserratBold - Size: 26 - Color: #1D3557 mainTxt
     static let title1 = TextStyle(font: Font.montserratBold, color: .mainTxt, fontSize: 26)
 
-    /// Font: montserratBold - Size: 20
+    /// Font: montserratBold - Size: 20 - Color: #1D3557 mainTxt
     static let listTitle = TextStyle(font: Font.montserratBold, color: .mainTxt, fontSize: 20)
 
-    /// Font: montserratBold - Size: 20
+    /// Font: robotoRegular - Size: 14 - Color: #1D3557 mainTxt
     static let cardDesc = TextStyle(font: Font.robotoRegular, color: .mainTxt, fontSize: 14)
     
-    /// Font: poppinsSemiBold - Size: 16
+    /// Font: poppinsSemiBold - Size: 16 - Color: #1D3557 mainTxt
     static let cardTitle = TextStyle(font: Font.poppinsSemiBold, color: .mainTxt, fontSize: 16)
     
+    /// Font: montserratBold - Size: 16 - Color: #1D3557 mainTxt
+    static let cardTitle2 = TextStyle(font: Font.montserratBold, color: .mainTxt, fontSize: 16)
+    
+    /// Font: robotoRegular - Size: 16 - Color: #1D3557 mainTxt
     static let body1 = TextStyle(font: Font.robotoRegular, color: .mainTxt, fontSize: 16)
     
+    /// Font: robotoRegular - Size: 22 - Color: #1D3557 mainTxt
     static let paragraph1 = TextStyle(font: Font.robotoRegular, color: .mainTxt, fontSize: 22)
     
+    /// Font: robotoRegular - Size: 18 - Color: #457B9D mainBtn
     static let button1 = TextStyle(font: Font.robotoRegular, color: .mainBtn, fontSize: 18)
 }

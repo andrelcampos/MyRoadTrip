@@ -22,6 +22,15 @@
 		87635ECE2C1EA6D6000FA354 /* LegDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635ECD2C1EA6D6000FA354 /* LegDetailsViewController.swift */; };
 		87635ED02C1EA7C4000FA354 /* LegDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635ECF2C1EA7C4000FA354 /* LegDetailsViewModel.swift */; };
 		87635ED22C1EAA8C000FA354 /* LegDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635ED12C1EAA8C000FA354 /* LegDetailsCoordinator.swift */; };
+		87635ED52C1F5F28000FA354 /* StepByStepViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635ED42C1F5F28000FA354 /* StepByStepViewController.swift */; };
+		87635ED72C1F5F5A000FA354 /* StepByStepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635ED62C1F5F5A000FA354 /* StepByStepViewModel.swift */; };
+		87635ED92C1F60F5000FA354 /* StepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635ED82C1F60F5000FA354 /* StepTableViewCell.swift */; };
+		87635EDB2C1F6364000FA354 /* StepByStepCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635EDA2C1F6364000FA354 /* StepByStepCoordinator.swift */; };
+		87635EDD2C1F9667000FA354 /* CommomMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635EDC2C1F9667000FA354 /* CommomMethods.swift */; };
+		87635EE02C1F98D8000FA354 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635EDF2C1F98D8000FA354 /* PlacesListViewController.swift */; };
+		87635EE22C1F98E7000FA354 /* PlacesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635EE12C1F98E7000FA354 /* PlacesListCoordinator.swift */; };
+		87635EE42C1F993D000FA354 /* PlacesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635EE32C1F993D000FA354 /* PlacesListViewModel.swift */; };
+		87635EE62C1F9954000FA354 /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87635EE52C1F9954000FA354 /* PlaceTableViewCell.swift */; };
 		87CE4CEB2C110F6A00A3CF63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4CEA2C110F6A00A3CF63 /* AppDelegate.swift */; };
 		87CE4CED2C110F6A00A3CF63 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4CEC2C110F6A00A3CF63 /* SceneDelegate.swift */; };
 		87CE4CEF2C110F6A00A3CF63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87CE4CEE2C110F6A00A3CF63 /* ViewController.swift */; };
@@ -93,6 +102,15 @@
 		87635ECD2C1EA6D6000FA354 /* LegDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegDetailsViewController.swift; sourceTree = "<group>"; };
 		87635ECF2C1EA7C4000FA354 /* LegDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegDetailsViewModel.swift; sourceTree = "<group>"; };
 		87635ED12C1EAA8C000FA354 /* LegDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegDetailsCoordinator.swift; sourceTree = "<group>"; };
+		87635ED42C1F5F28000FA354 /* StepByStepViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepViewController.swift; sourceTree = "<group>"; };
+		87635ED62C1F5F5A000FA354 /* StepByStepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepViewModel.swift; sourceTree = "<group>"; };
+		87635ED82C1F60F5000FA354 /* StepTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepTableViewCell.swift; sourceTree = "<group>"; };
+		87635EDA2C1F6364000FA354 /* StepByStepCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepByStepCoordinator.swift; sourceTree = "<group>"; };
+		87635EDC2C1F9667000FA354 /* CommomMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommomMethods.swift; sourceTree = "<group>"; };
+		87635EDF2C1F98D8000FA354 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
+		87635EE12C1F98E7000FA354 /* PlacesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListCoordinator.swift; sourceTree = "<group>"; };
+		87635EE32C1F993D000FA354 /* PlacesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewModel.swift; sourceTree = "<group>"; };
+		87635EE52C1F9954000FA354 /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
 		87CE4CE72C110F6A00A3CF63 /* MyRoadTrip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyRoadTrip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87CE4CEA2C110F6A00A3CF63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87CE4CEC2C110F6A00A3CF63 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,8 +201,31 @@
 				87635ED12C1EAA8C000FA354 /* LegDetailsCoordinator.swift */,
 				87635ECD2C1EA6D6000FA354 /* LegDetailsViewController.swift */,
 				87635ECF2C1EA7C4000FA354 /* LegDetailsViewModel.swift */,
+				87635ED32C1F5F0F000FA354 /* StepByStep */,
 			);
 			path = "Leg Details";
+			sourceTree = "<group>";
+		};
+		87635ED32C1F5F0F000FA354 /* StepByStep */ = {
+			isa = PBXGroup;
+			children = (
+				87635EDA2C1F6364000FA354 /* StepByStepCoordinator.swift */,
+				87635ED42C1F5F28000FA354 /* StepByStepViewController.swift */,
+				87635ED82C1F60F5000FA354 /* StepTableViewCell.swift */,
+				87635ED62C1F5F5A000FA354 /* StepByStepViewModel.swift */,
+			);
+			path = StepByStep;
+			sourceTree = "<group>";
+		};
+		87635EDE2C1F98B9000FA354 /* PlaceList */ = {
+			isa = PBXGroup;
+			children = (
+				87635EE12C1F98E7000FA354 /* PlacesListCoordinator.swift */,
+				87635EDF2C1F98D8000FA354 /* PlacesListViewController.swift */,
+				87635EE52C1F9954000FA354 /* PlaceTableViewCell.swift */,
+				87635EE32C1F993D000FA354 /* PlacesListViewModel.swift */,
+			);
+			path = PlaceList;
 			sourceTree = "<group>";
 		};
 		87CE4CDE2C110F6A00A3CF63 = {
@@ -260,6 +301,8 @@
 			isa = PBXGroup;
 			children = (
 				87635E6D2C1E77C0000FA354 /* CoreData */,
+				87CE4D1D2C110FB100A3CF63 /* Services */,
+				87CE4DCD2C191B2500A3CF63 /* Models */,
 				87CE4DC42C190D5600A3CF63 /* Main */,
 				87CE4D3B2C17A66B00A3CF63 /* Onboarding */,
 			);
@@ -312,6 +355,7 @@
 				87CE4D432C17AA5800A3CF63 /* UIColorUtils.swift */,
 				87CE4DB72C17B40C00A3CF63 /* FontUtils.swift */,
 				87CE4DD02C1A50A400A3CF63 /* BaseCoordinator.swift */,
+				87635EDC2C1F9667000FA354 /* CommomMethods.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -352,6 +396,7 @@
 				87CE4D3C2C17A67800A3CF63 /* NewRoute */,
 				87CE4D3D2C17A68200A3CF63 /* History */,
 				87CE4DBB2C190AA800A3CF63 /* About */,
+				87635EDE2C1F98B9000FA354 /* PlaceList */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -362,7 +407,6 @@
 				87CE4DD22C1A50F400A3CF63 /* NewRouteCoordinator.swift */,
 				87CE4DBC2C190BE400A3CF63 /* NewRouteViewController.swift */,
 				87CE4DCE2C191E1000A3CF63 /* NewRouteViewModel.swift */,
-				87CE4D1D2C110FB100A3CF63 /* Services */,
 			);
 			path = CreateRoute;
 			sourceTree = "<group>";
@@ -370,7 +414,6 @@
 		87CE4DCC2C19197200A3CF63 /* TripDetails */ = {
 			isa = PBXGroup;
 			children = (
-				87CE4DCD2C191B2500A3CF63 /* Models */,
 				87CE4DD62C1A6BCB00A3CF63 /* TripDetailsCoordinator.swift */,
 				87CE4DBE2C190C9B00A3CF63 /* TripDetailsViewController.swift */,
 				87CE4DD42C1A6B7E00A3CF63 /* TripDetailCardCell.swift */,
@@ -528,11 +571,14 @@
 				87CE4D302C151BCA00A3CF63 /* GoogleRoutesServices.swift in Sources */,
 				87635EB52C1E86A6000FA354 /* StepEntity+CoreDataProperties.swift in Sources */,
 				87CE4DD72C1A6BCB00A3CF63 /* TripDetailsCoordinator.swift in Sources */,
+				87635EE42C1F993D000FA354 /* PlacesListViewModel.swift in Sources */,
 				87635EB42C1E86A6000FA354 /* StepEntity+CoreDataClass.swift in Sources */,
 				87CE4CEF2C110F6A00A3CF63 /* ViewController.swift in Sources */,
 				87CE4DCA2C19191000A3CF63 /* TripModel.swift in Sources */,
 				87635EC82C1E8DC6000FA354 /* TravelDetailsEntity+CoreDataClass.swift in Sources */,
+				87635EE62C1F9954000FA354 /* PlaceTableViewCell.swift in Sources */,
 				87635EBC2C1E86A6000FA354 /* RouteEntity+CoreDataClass.swift in Sources */,
+				87635ED92C1F60F5000FA354 /* StepTableViewCell.swift in Sources */,
 				87635EBD2C1E86A6000FA354 /* RouteEntity+CoreDataProperties.swift in Sources */,
 				87CE4CEB2C110F6A00A3CF63 /* AppDelegate.swift in Sources */,
 				87635ED02C1EA7C4000FA354 /* LegDetailsViewModel.swift in Sources */,
@@ -553,6 +599,8 @@
 				87635ECE2C1EA6D6000FA354 /* LegDetailsViewController.swift in Sources */,
 				87635EC92C1E8DC6000FA354 /* TravelDetailsEntity+CoreDataProperties.swift in Sources */,
 				87CE4DD52C1A6B7E00A3CF63 /* TripDetailCardCell.swift in Sources */,
+				87635EE02C1F98D8000FA354 /* PlacesListViewController.swift in Sources */,
+				87635ED52C1F5F28000FA354 /* StepByStepViewController.swift in Sources */,
 				87CE4D442C17AA5800A3CF63 /* UIColorUtils.swift in Sources */,
 				87635ECB2C1E9339000FA354 /* CoreDataStack.swift in Sources */,
 				87CE4D3F2C17A77B00A3CF63 /* WellcomeViewController.swift in Sources */,
@@ -560,9 +608,13 @@
 				87635EB82C1E86A6000FA354 /* LatLongEntity+CoreDataClass.swift in Sources */,
 				87CE4DB82C17B40C00A3CF63 /* FontUtils.swift in Sources */,
 				87CE4DC62C190D7000A3CF63 /* MainTabbarController.swift in Sources */,
+				87635EDD2C1F9667000FA354 /* CommomMethods.swift in Sources */,
 				87CE4DBA2C17C2BD00A3CF63 /* AppNavigationController.swift in Sources */,
 				87CE4D212C11198E00A3CF63 /* OpenAIServices.swift in Sources */,
+				87635EE22C1F98E7000FA354 /* PlacesListCoordinator.swift in Sources */,
+				87635EDB2C1F6364000FA354 /* StepByStepCoordinator.swift in Sources */,
 				87635EBB2C1E86A6000FA354 /* TripEntity+CoreDataProperties.swift in Sources */,
+				87635ED72C1F5F5A000FA354 /* StepByStepViewModel.swift in Sources */,
 				87CE4DBD2C190BE400A3CF63 /* NewRouteViewController.swift in Sources */,
 				87635EBA2C1E86A6000FA354 /* TripEntity+CoreDataClass.swift in Sources */,
 			);

@@ -14,15 +14,15 @@ class LegDetailsViewModel {
     let route: RouteModel
     let stepIndex: Int
     
-    var goToStepByStep: (([StepModel]) -> Void)?
-    var goToStartDriving: ((LatLong) -> Void)?
-    var goToWhatToDo: ((LatLong) -> Void)?
-    var goToWhereToStay: ((LatLong) -> Void)?
+    var goToStepByStep: ((RouteModel) -> Void)?
+    var goToStartDriving: LocationVoid?
+    var goToWhatToDo: LocationVoid?
+    var goToWhereToStay: LocationVoid?
     
     lazy var titleStr: String           = { "Trecho \(stepIndex)" }()
-    lazy var fromStr: String            = { "De \(route.origin)" }()
-    lazy var toStr: String              = { "Até \(route.destination)" }()
-    lazy var distanceStr: String        = { "Distância aproximada: \(route.distance)" }()
+    lazy var fromStr: String            = { "De:" }()
+    lazy var toStr: String              = { "Até:" }()
+    lazy var distanceStr: String        = { "Distância aproximada:" }()
     
     lazy var stepByStepBtn: String      = { "Ver passo a passo" }()
     lazy var startDrivingBtn: String    = { "Dirigir para lá (Waze)" }()
@@ -34,5 +34,24 @@ class LegDetailsViewModel {
     init(route: RouteModel, step: Int) {
         self.route = route
         self.stepIndex = step
+    }
+    
+    func goToStepsTapped() {
+        goToStepByStep?(route)
+    }
+    
+    func goToStartDrivingTapped() {
+        guard let location = route.endLocation else { return }
+        goToStartDriving?(location)
+    }
+    
+    func goToWhatToDoTapped() {
+        guard let location = route.endLocation else { return }
+        goToWhatToDo?(location)
+    }
+
+    func goToWhereToStayTapped() {
+        guard let location = route.endLocation else { return }
+        goToWhereToStay?(location)
     }
 }

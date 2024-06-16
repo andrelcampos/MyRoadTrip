@@ -11,19 +11,26 @@ import Foundation
 class GooglePlacesServices {
     
     // MARK: Static variables
-    static let apiKey = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_API_KEY") as? String ?? "error"
+    static let justKey = "csAqJYtlaB_GID4Tbpek1HJ0RHH4hxw9BySazIA".localized()
     static let languageCode = "pt-BR"
-    static let includedTypes = ["tourist_attraction"]
     static let rankPreference = "POPULARITY"
     static let radius: Double = 10000
     
-    static func getPlacesAround(_ point: LatLong, completion: @escaping (PlaceResponse?) -> Void) {
+    static func getAttractionsAround(_ point: LatLong, completion: @escaping (PlaceResponse?) -> Void) {
+        getPlacesAround(point, type: .attraction, completion: completion)
+    }
+    
+    static func getHotelsAround(_ point: LatLong, completion: @escaping (PlaceResponse?) -> Void) {
+        getPlacesAround(point, type: .hotel, completion: completion)
+    }
+    
+    static private func getPlacesAround(_ point: LatLong, type: PlaceType, completion: @escaping (PlaceResponse?) -> Void) {
         
         var request = getRequest()
         
         let location = LocationRestriction(circle: RestritiveCircle(center: point, radius: radius))
         let body = PlaceRequest(languageCode: languageCode,
-                                includedTypes: includedTypes,
+                                includedTypes: type.includedTypes(),
                                 locationRestriction: location,
                                 rankPreference: rankPreference)
         
@@ -67,7 +74,7 @@ class GooglePlacesServices {
         let url = URL(string: "https://places.googleapis.com/v1/places:searchNearby")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue(apiKey, forHTTPHeaderField: "X-Goog-Api-Key")
+        request.setValue(justKey, forHTTPHeaderField: "X-Goog-Api-Key")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
         let name = "places.name"
@@ -78,8 +85,9 @@ class GooglePlacesServices {
         let iPNumber = "places.internationalPhoneNumber"
         let location = "places.location"
         let rating = "places.rating"
+        let webSite = "places.websiteUri"
         let gUri = "places.googleMapsUri"
-        request.setValue("\(name),\(dName),\(fAddress),\(sFAddress),\(nPNumber),\(iPNumber),\(location),\(rating),\(gUri)", forHTTPHeaderField: "X-Goog-FieldMask")
+        request.setValue("\(name),\(dName),\(fAddress),\(sFAddress),\(nPNumber),\(iPNumber),\(location),\(rating),\(gUri),\(webSite)", forHTTPHeaderField: "X-Goog-FieldMask")
         return request
     }
 }
@@ -108,16 +116,30 @@ extension GooglePlacesServices {
     struct PlaceResponse: Decodable {
         let places: [Place]
     }
+}
+
+struct Place: Decodable {
+    let name: String
+    let displayName: LocalizedText
+    let formattedAddress: String
+    let shortFormattedAddress: String
+    let nationalPhoneNumber: String?
+    let internationalPhoneNumber: String?
+    let location: LatLong
+    let rating: Double
+    let googleMapsUri: String
+    let websiteUri: String?
+}
+
+enum PlaceType {
+    case attraction, hotel
     
-    struct Place: Decodable {
-        let name: String
-        let displayName: LocalizedText
-        let formattedAddress: String
-        let shortFormattedAddress: String
-        let nationalPhoneNumber: String?
-        let internationalPhoneNumber: String?
-        let location: LatLong
-        let rating: Double
-        let googleMapsUri: String
+    func includedTypes() -> [String] {
+        switch self {
+        case .attraction:
+            return ["tourist_attraction"]
+        case .hotel:
+            return ["hotel", "resort_hotel"]
+        }
     }
 }

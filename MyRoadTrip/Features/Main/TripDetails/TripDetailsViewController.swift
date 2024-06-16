@@ -36,6 +36,7 @@ class TripDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = viewModel.title
 
         if let navbar = navigationController?.navigationBar {
             let tabbarAppearance = navbar.standardAppearance

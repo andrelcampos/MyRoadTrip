@@ -23,6 +23,7 @@ class LegDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        title = "Detahes"
         
         setupUI()
     }
@@ -36,32 +37,53 @@ class LegDetailsViewController: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(titleLabel)
         
-        let labelFont = TextStyle.body1.font()
-        let labelColor = UIColor.mainTxt
+        let labelStrFont = TextStyle.paragraph1
+        let labelValueFont = TextStyle.listTitle
         
         // De: <origem>
         let fromLabel = UILabel()
-        fromLabel.font = labelFont
-        fromLabel.textColor = labelColor
+        fromLabel.font = labelStrFont.font()
+        fromLabel.textColor = labelStrFont.color
         fromLabel.text = viewModel.fromStr
         fromLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(fromLabel)
         
+        let fromLabelValue = UILabel()
+        fromLabelValue.font = labelValueFont.font()
+        fromLabelValue.textColor = labelValueFont.color
+        fromLabelValue.text = viewModel.route.origin
+        fromLabelValue.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(fromLabelValue)
+        
         // Até: <destino>
         let toLabel = UILabel()
-        toLabel.font = labelFont
-        toLabel.textColor = labelColor
+        toLabel.font = labelStrFont.font()
+        toLabel.textColor = labelStrFont.color
         toLabel.text = viewModel.toStr
         toLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(toLabel)
         
+        let toLabelValue = UILabel()
+        toLabelValue.font = labelValueFont.font()
+        toLabelValue.textColor = labelValueFont.color
+        toLabelValue.text = viewModel.route.destination
+        toLabelValue.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(toLabelValue)
+        
         // Distância aproximada: <distancia>
         let distanceLabel = UILabel()
-        distanceLabel.font = labelFont
-        distanceLabel.textColor = labelColor
+        distanceLabel.font = labelStrFont.font()
+        distanceLabel.textColor = labelStrFont.color
         distanceLabel.text = viewModel.distanceStr
         distanceLabel.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(distanceLabel)
+        
+        let distLabelValue = UILabel()
+        distLabelValue.font = labelValueFont.font()
+        distLabelValue.textColor = labelValueFont.color
+        distLabelValue.text = viewModel.route.distance
+        distLabelValue.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(distLabelValue)
         
         // Stack View para botões
         let stackView = UIStackView()
@@ -102,11 +124,23 @@ class LegDetailsViewController: UIViewController {
             fromLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 16),
             fromLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             
+            fromLabelValue.centerYAnchor.constraint(equalTo: fromLabel.centerYAnchor),
+            fromLabelValue.leadingAnchor.constraint(equalTo: fromLabel.trailingAnchor, constant: 8),
+            view.trailingAnchor.constraint(greaterThanOrEqualTo: fromLabelValue.trailingAnchor, constant: 16),
+            
             toLabel.topAnchor.constraint(equalTo: fromLabel.bottomAnchor, constant: 8),
             toLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             
+            toLabelValue.centerYAnchor.constraint(equalTo: toLabel.centerYAnchor),
+            toLabelValue.leadingAnchor.constraint(equalTo: toLabel.trailingAnchor, constant: 8),
+            view.trailingAnchor.constraint(greaterThanOrEqualTo: toLabelValue.trailingAnchor, constant: 16),
+            
             distanceLabel.topAnchor.constraint(equalTo: toLabel.bottomAnchor, constant: 8),
             distanceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            
+            distLabelValue.centerYAnchor.constraint(equalTo: distanceLabel.centerYAnchor),
+            distLabelValue.leadingAnchor.constraint(equalTo: distanceLabel.trailingAnchor, constant: 8),
+            view.trailingAnchor.constraint(greaterThanOrEqualTo: distLabelValue.trailingAnchor, constant: 16),
             
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
@@ -129,29 +163,18 @@ class LegDetailsViewController: UIViewController {
     }
     
     @objc func stepByStepButtonTapped() {
-        DispatchQueue.main.async {
-            self.viewModel.goToStepByStep?(self.viewModel.steps)
-        }
+        viewModel.goToStepsTapped()
     }
     
     @objc func startDrivingButtonTapped() {
-        guard let location = viewModel.route.endLocation else { return }
-        DispatchQueue.main.async {[location] in
-            self.viewModel.goToStartDriving?(location)
-        }
+        viewModel.goToStartDrivingTapped()
     }
     
     @objc func whatToDoButtonTapped() {
-        guard let location = viewModel.route.endLocation else { return }
-        DispatchQueue.main.async {[location] in
-            self.viewModel.goToWhatToDo?(location)
-        }
+        viewModel.goToWhatToDoTapped()
     }
     
     @objc func whereToStayButtonTapped() {
-        guard let location = viewModel.route.endLocation else { return }
-        DispatchQueue.main.async {[location] in
-            self.viewModel.goToWhereToStay?(location)
-        }
+        viewModel.goToWhereToStayTapped()
     }
 }
