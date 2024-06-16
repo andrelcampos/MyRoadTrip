@@ -25,7 +25,7 @@ class LegDetailsViewModel {
     lazy var distanceStr: String        = { "Distância aproximada: \(route.distance)" }()
     
     lazy var stepByStepBtn: String      = { "Ver passo a passo" }()
-    lazy var startDrivingBtn: String    = { "Começar a dirigir" }()
+    lazy var startDrivingBtn: String    = { "Dirigir para lá (Waze)" }()
     lazy var whatToDoBtn: String        = { "O que fazer em \(route.destination)?" }()
     lazy var whereToStayBtn: String     = { "Onde me hospedar" }()
     

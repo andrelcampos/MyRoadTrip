@@ -37,7 +37,11 @@ class LegDetailsCoordinator: BaseCoordinator {
     }
     
     private func goToStartDriving(location: LatLong) {
-        // CALL FUNCTION TO MAP APPS
+        if UIApplication.shared.canOpenURL(URL(string: "https://waze.com/ul")!) {
+            // Waze is installed. Launch Waze and start navigation
+            let urlStr = String(format: "https://waze.com/ul?ll=%f,%f&navigate=yes", location.latitude, location.longitude)
+            UIApplication.shared.open(URL(string: urlStr)!)
+        }
     }
     
     private func goToWhatToDo(location: LatLong) {
@@ -47,6 +51,9 @@ class LegDetailsCoordinator: BaseCoordinator {
     }
     
     private func goToWhereToStay(location: LatLong) {
-        // CALL TRIP ADVISOR SITE
+        //www.google.com/maps/search/Hotéis/@-29.9113182,-51.1799296,11
+        guard let url = URL(string: "www.google.com/maps/search/Hoteis/@\(location.latitude),\(location.longitude),11z") else { return }
+        
+        UIApplication.shared.open(url)
     }
 }

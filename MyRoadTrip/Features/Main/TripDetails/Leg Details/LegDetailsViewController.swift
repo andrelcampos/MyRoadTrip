@@ -76,10 +76,13 @@ class LegDetailsViewController: UIViewController {
         stackView.addArrangedSubview(stepByStepButton)
         
         if viewModel.route.endLocation != nil {
-            // Botão Começar a dirigir
-            let startDrivingButton = createButton(withTitle: viewModel.startDrivingBtn)
-            startDrivingButton.addTarget(self, action: #selector(startDrivingButtonTapped), for: .touchUpInside)
-            stackView.addArrangedSubview(startDrivingButton)
+            
+            if UIApplication.shared.canOpenURL(URL(string: "https://waze.com/ul")!) {
+                // Botão Começar a dirigir
+                let startDrivingButton = createButton(withTitle: viewModel.startDrivingBtn)
+                startDrivingButton.addTarget(self, action: #selector(startDrivingButtonTapped), for: .touchUpInside)
+                stackView.addArrangedSubview(startDrivingButton)
+            }
             
             // Botão O que fazer em <destino>
             let whatToDoButton = createButton(withTitle: viewModel.whatToDoBtn)
