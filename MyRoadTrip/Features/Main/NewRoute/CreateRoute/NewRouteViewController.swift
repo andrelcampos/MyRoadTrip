@@ -208,7 +208,7 @@ class NewRouteViewController: UIViewController, UITextFieldDelegate {
         setLoading(true)
         viewModel.tappedSearch(origin: originTextField.text,
                                destination: destinationTextField.text,
-                               distance: distanceTextField.text) { [weak self] (error)  in
+                               dailyDistance: distanceTextField.text) { [weak self] (error)  in
             DispatchQueue.main.async {
                 self?.setLoading(false)
                 guard let error = error, let self = self else { return }

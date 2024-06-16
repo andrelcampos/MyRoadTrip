@@ -15,7 +15,7 @@ class TripModel {
     // User infos
     var origin: String
     var destination: String
-    var distance: String
+    var dailyDistance: String
 
     // ChatGPT result
     var citiesToStep: [String] = []
@@ -27,11 +27,11 @@ class TripModel {
     var routes: [Int: RouteModel] = [:]
     
     // MARK: Initializers
-    init(origin: String, destination: String, distance: String) {
+    init(origin: String, destination: String, dailyDistance: String) {
         
         self.origin = origin
         self.destination = destination
-        self.distance = distance
+        self.dailyDistance = dailyDistance
     }
     
     // MARK: Methods

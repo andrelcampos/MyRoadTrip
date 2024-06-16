@@ -39,7 +39,7 @@ class OpenAIServices {
     }
     
     // Função para fazer a requisição ao ChatGPT
-    func getListOfStopableCitiesTo(origin: String, destination: String, distance: String, completion: @escaping ([String]?) -> Void) {
+    func getListOfStopableCitiesTo(origin: String, destination: String, dailyDistance: String, completion: @escaping ([String]?) -> Void) {
         
         completion(["Canoas", "Santa Maria", "Uruguaiana", "Rosario", "Buenos Aires"])
         return
@@ -53,7 +53,7 @@ class OpenAIServices {
         let prompt = """
     Será realizada uma viagem de carro.
     Crie uma rota, mais direta possível, saindo de \(origin) e indo para \(destination).
-    Você deve sugerir pontos de parada para descanso, dividindo essa rota a cada \(distance)Km mais ou menos (variação de no máximo 20%).
+    Você deve sugerir pontos de parada para descanso, dividindo essa rota a cada \(dailyDistance)Km mais ou menos (variação de no máximo 20%).
     Retornar somente a lista de cidades, não numerada, dos pontos de parada, sendo o primeiro item da lista a cidade de origem.
     """
                 

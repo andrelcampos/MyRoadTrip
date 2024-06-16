@@ -16,16 +16,16 @@ class NewRouteViewModel {
     private let gptService = OpenAIServices()
     private let routeService = GoogleRoutesServices()
     
-    func tappedSearch(origin: String?, destination: String?, distance: String?, returnError: @escaping (String?) -> Void) {
+    func tappedSearch(origin: String?, destination: String?, dailyDistance: String?, returnError: @escaping (String?) -> Void) {
         guard let origin = origin else { returnError("Origem não pode ser vazio"); return }
         guard let destination = destination else { returnError("Destino não pode ser vazio"); return }
-        guard let distance = distance else { returnError("Distância deve ser entre 100 e 1000 KMs"); return }
+        guard let dailyDistance = dailyDistance else { returnError("Distância deve ser entre 100 e 1000 KMs"); return }
         
         // create TripModel with user data
-        let trip = TripModel(origin: origin, destination: destination, distance: distance)
+        let trip = TripModel(origin: origin, destination: destination, dailyDistance: dailyDistance)
         
         // get list of cities to travel by
-        gptService.getListOfStopableCitiesTo(origin: origin, destination: destination, distance: distance) { [weak self, routeService, returnError] list in
+        gptService.getListOfStopableCitiesTo(origin: origin, destination: destination, dailyDistance: dailyDistance) { [weak self, routeService, returnError] list in
             guard let list = list else { returnError("Erro ao buscar lista de cidades"); return }
             
             // update TripModel with waypoints for the trip
