@@ -11,14 +11,17 @@ import Foundation
 class GoogleRoutesServices {
     
     // MARK: Static variables
-    static let listOfCities = ["Canoas", "Pelotas", "Santa Vitória do Palmar", "Buenos Aires"]
-    static let apiKey = Bundle.main.object(forInfoDictionaryKey: "GOOGLE_API_KEY") as? String ?? "error"
+    let justKey = "csAqJYtlaB_GID4Tbpek1HJ0RHH4hxw9BySazIA".localized()
     static let travelMode = "DRIVE"
     static let languageCode = "pt-BR"
     
     // MARK: Static methods
-    static func getGeneralRoute(from cities: [String], completion: @escaping (RouteResponse?) -> Void) {
+    func getGeneralRoute(from cities: [String], completion: @escaping (Route?) -> Void) {
         
+        completion(Route(localizedValues: LocalizedValues(staticDuration: LocalizedText(text: "15 horas e 39 minutos"),
+                                                          distance: LocalizedText(text: "1.315 Km"),
+                                                          duration: nil)))
+        return
         var request = getRequest()
         request.setValue("routes.localizedValues", forHTTPHeaderField: "X-Goog-FieldMask")
         
@@ -26,7 +29,7 @@ class GoogleRoutesServices {
         let destination = WayPoint(address: cities.last)
         let body = RouteRequest(origin: origin,
                                 destination: destination,
-                                intermediates: intermediatesFrom(cities))
+                                intermediates: intermediateFrom(cities))
         
         do {
             let jsonData = try JSONEncoder().encode(body)
@@ -52,7 +55,7 @@ class GoogleRoutesServices {
             
             do {
                 let routeResponse = try JSONDecoder().decode(RouteResponse.self, from: data)
-                completion(routeResponse)
+                completion(routeResponse.routes.first)
             }
             catch {
                 print("Error decoding JSON: \(error)")
@@ -63,7 +66,19 @@ class GoogleRoutesServices {
         task.resume()
     }
     
-    static func getDetailedRoute(from origin: String, to destination: String, completion: @escaping (DetailedRouteResponse?) -> Void) {
+    func getDetailedRoute(from origin: String, to destination: String, completion: @escaping (DetailedRouteResponse?) -> Void) {
+        
+        let localized = LocalizedValues(staticDuration: LocalizedText(text:"5 horas e 10 minutos"),
+                                        distance: LocalizedText(text:"432 km"), duration: nil)
+        let step = Step(localizedValues: localized, navigationInstruction: NavigationInstruction(instructions: "Vire à direita em algum momento"))
+        let leg = Leg(localizedValues: localized, steps: [step, step, step],
+                      endLocation: Location(latLng: LatLong(latitude: -29.689, longitude: -53.7923)))
+        let route = DetailedRoute(localizedValues: localized, legs: [leg], warnings: ["A rota contém pedágios"], description: "BR 116")
+        let response = DetailedRouteResponse(routes: [route, route])
+        completion(response)
+        return
+        
+        
         
         var request = getRequest()
         request.setValue("routes.localizedValues,routes.legs,routes.warnings,routes.description", forHTTPHeaderField: "X-Goog-FieldMask")
@@ -111,26 +126,21 @@ class GoogleRoutesServices {
     
     // MARK: Private methods
     
-    static private func getRequest() -> URLRequest {
+    private func getRequest() -> URLRequest {
         
         let url = URL(string: "https://routes.googleapis.com/directions/v2:computeRoutes")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue(apiKey, forHTTPHeaderField: "X-Goog-Api-Key")
+        request.setValue(justKey, forHTTPHeaderField: "X-Goog-Api-Key")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
     
-    static private func intermediatesFrom(_ route: [String]) -> [WayPoint]? {
+    private func intermediateFrom(_ route: [String]) -> [WayPoint]? {
         guard route.count > 2 else { return nil }
-        var result: [WayPoint] = []
-        var intermediates = route
-        intermediates.removeFirst()
-        intermediates.removeLast()
-        for intermediate in intermediates {
-            result.append(WayPoint(address: intermediate, via: true))
-        }
-        return result
+        let mod: Int = route.count / 2
+        
+        return [WayPoint(address: route[mod], via: true)]
     }
 }
 
@@ -170,21 +180,11 @@ extension GoogleRoutesServices {
     // MARK: Models for responses
     
     struct RouteResponse: Decodable {
-        let routes: [Routes]
+        let routes: [Route]
     }
     
-    struct Routes: Decodable {
+    struct Route: Decodable {
         let localizedValues: LocalizedValues
-    }
-    
-    struct LocalizedValues: Decodable {
-        let staticDuration: LocalizedText
-        let distance: LocalizedText
-        let duration: LocalizedText?
-    }
-    
-    struct LocalizedText: Decodable {
-        let text: String
     }
     
     struct DetailedRouteResponse: Decodable {
@@ -208,17 +208,30 @@ extension GoogleRoutesServices {
         let latLng: LatLong
     }
     
-    struct LatLong: Codable {
-        let latitude: Double
-        let longitude: Double
-    }
-    
     struct Step: Decodable {
         let localizedValues: LocalizedValues
-        let navigationInstruction: NavigationInstruction
+        let navigationInstruction: NavigationInstruction?
     }
     
     struct NavigationInstruction: Decodable {
         let instructions: String
     }
 }
+
+// MARK: - Reused models
+struct LatLong: Codable {
+    let latitude: Double
+    let longitude: Double
+}
+
+struct LocalizedValues: Decodable {
+    let staticDuration: LocalizedText
+    let distance: LocalizedText
+    let duration: LocalizedText?
+}
+
+struct LocalizedText: Decodable {
+    let text: String
+}
+
+

@@ -17,7 +17,7 @@ class GooglePlacesServices {
     static let rankPreference = "POPULARITY"
     static let radius: Double = 10000
     
-    static func getPlacesAround(_ point: GoogleRoutesServices.LatLong, completion: @escaping (PlaceResponse?) -> Void) {
+    static func getPlacesAround(_ point: LatLong, completion: @escaping (PlaceResponse?) -> Void) {
         
         var request = getRequest()
         
@@ -50,7 +50,6 @@ class GooglePlacesServices {
             }
             
             do {
-                let jsonResponde = try JSONSerialization.jsonObject(with: data)
                 let routeResponse = try JSONDecoder().decode(PlaceResponse.self, from: data)
                 completion(routeResponse)
             }
@@ -101,7 +100,7 @@ extension GooglePlacesServices {
     }
     
     struct RestritiveCircle: Codable {
-        let center: GoogleRoutesServices.LatLong
+        let center: LatLong
         let radius: Double
     }
     
@@ -112,12 +111,12 @@ extension GooglePlacesServices {
     
     struct Place: Decodable {
         let name: String
-        let displayName: GoogleRoutesServices.LocalizedText
+        let displayName: LocalizedText
         let formattedAddress: String
         let shortFormattedAddress: String
         let nationalPhoneNumber: String?
         let internationalPhoneNumber: String?
-        let location: GoogleRoutesServices.LatLong
+        let location: LatLong
         let rating: Double
         let googleMapsUri: String
     }
