@@ -10,6 +10,8 @@ import Foundation
 // MARK: - Class
 class TripDetailsViewModel {
     
+    var goToRouteDetails: (((RouteModel, Int)) -> Void)?
+    
     let trip: TripModel
     
     lazy var headerTitle: String = {

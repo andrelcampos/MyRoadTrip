@@ -13,11 +13,14 @@ class TripDetailCardCell: UITableViewCell {
 
     private let containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .mainBg
+        
+        view.backgroundColor = .white
+        view.layer.borderColor = UIColor.mainTxt.cgColor
+        view.layer.borderWidth = 1.0
         view.layer.cornerRadius = 8
         view.layer.shadowColor = UIColor.black.cgColor
         view.layer.shadowOpacity = 0.1
-        view.layer.shadowOffset = CGSize(width: 0, height: 1)
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
         view.layer.shadowRadius = 4
         return view
     }()

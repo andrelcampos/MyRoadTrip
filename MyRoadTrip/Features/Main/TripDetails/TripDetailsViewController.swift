@@ -35,12 +35,12 @@ class TripDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Overriden methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .secondaryBg
+        view.backgroundColor = .white
 
         if let navbar = navigationController?.navigationBar {
             let tabbarAppearance = navbar.standardAppearance
             tabbarAppearance.configureWithOpaqueBackground()
-            tabbarAppearance.backgroundColor = .secondaryBg
+            tabbarAppearance.backgroundColor = .white
             navbar.scrollEdgeAppearance = tabbarAppearance
             navbar.standardAppearance = tabbarAppearance
         }
@@ -82,21 +82,34 @@ class TripDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         let headerView = UIView()
         headerView.backgroundColor = .clear
         
+        let cardView = UIView()
+        cardView.backgroundColor = .secondaryBg
+        cardView.layer.cornerRadius = 8
+        
+        headerView.addSubview(cardView)
+        
         let headerLabel = UILabel()
         headerLabel.text = viewModel.headerTitle
         headerLabel.textColor = .mainTxt
-        headerLabel.font = TextStyle.title1.font()
+        headerLabel.font = TextStyle.listTitle.font()
         headerLabel.numberOfLines = 0
         headerLabel.textAlignment = .center
 
-        headerView.addSubview(headerLabel)
+        cardView.addSubview(headerLabel)
         
+        cardView.translatesAutoresizingMaskIntoConstraints = false
         headerLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            headerLabel.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 16),
-            headerLabel.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
-            headerLabel.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
-            headerLabel.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -16),
+            headerLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 16),
+            headerLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
+            headerLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
+            headerLabel.bottomAnchor.constraint(equalTo: cardView.bottomAnchor, constant: -16),
+            
+            cardView.topAnchor.constraint(equalTo: headerView.topAnchor, constant: 16),
+            cardView.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
+            cardView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -16),
+            cardView.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -16),
+            
             headerView.heightAnchor.constraint(greaterThanOrEqualToConstant: 120)
         ])
 
@@ -130,6 +143,8 @@ class TripDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: - UITableViewDelegate
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // Handle cell selection to show detailed view of the segment
+        let step = indexPath.row + 1
+        guard let route = viewModel.routes[step] else { return }
+        viewModel.goToRouteDetails?((route, step))
     }
 }

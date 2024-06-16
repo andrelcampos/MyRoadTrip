@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Class
+// MARK: - Trip Model
 class TripModel {
     
     // MARK: Variables
@@ -25,6 +25,9 @@ class TripModel {
     
     // Google routes result
     var routes: [Int: RouteModel] = [:]
+    
+    /// Property with the CoreData reference
+    var _tripEntity: TripEntity?
     
     // MARK: Initializers
     init(origin: String, destination: String, dailyDistance: String) {
@@ -48,19 +51,24 @@ class TripModel {
     }
 }
 
+// MARK: - Travel Details Model
 extension TripModel {
     struct TravelDetails {
         let distance: String
         let duration: String
-        
-        init(route: GoogleRoutesServices.Route) {
-            distance = route.localizedValues.distance.text
-            duration = route.localizedValues.staticDuration.text
-        }
+    }
+    
+}
+
+extension TripModel.TravelDetails {
+    init(route: GoogleRoutesServices.Route) {
+        distance = route.localizedValues.distance.text
+        duration = route.localizedValues.staticDuration.text
     }
 }
 
-class RouteModel {
+// MARK: - Route Model
+struct RouteModel {
     
     let origin: String
     let destination: String
@@ -70,7 +78,9 @@ class RouteModel {
     let warnings: [String]
     let endLocation: LatLong?
     let steps: [StepModel]
-    
+}
+
+extension RouteModel {
     init(route: GoogleRoutesServices.DetailedRoute, origin: String, destination: String) {
         self.origin = origin
         self.destination = destination
@@ -89,6 +99,7 @@ class RouteModel {
     }
 }
 
+// MARK: - Step Model
 struct StepModel {
     let distance: String
     let instruction: String?

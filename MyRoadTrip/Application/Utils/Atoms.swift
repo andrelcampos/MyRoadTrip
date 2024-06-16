@@ -79,13 +79,16 @@ class TextStyle {
 
 extension TextStyle {
     
-    static let title1 = TextStyle(font: Font.montserratBold, color: .mainTxt, fontSize: 28)
-    
+    static let title1 = TextStyle(font: Font.montserratBold, color: .mainTxt, fontSize: 26)
+
     /// Font: montserratBold - Size: 20
-    static let cardTitle = TextStyle(font: Font.montserratBold, color: .mainTxt, fontSize: 20)
+    static let listTitle = TextStyle(font: Font.montserratBold, color: .mainTxt, fontSize: 20)
+
+    /// Font: montserratBold - Size: 20
+    static let cardDesc = TextStyle(font: Font.robotoRegular, color: .mainTxt, fontSize: 14)
     
     /// Font: poppinsSemiBold - Size: 16
-    static let cardDesc = TextStyle(font: Font.poppinsSemiBold, color: .mainTxt, fontSize: 16)
+    static let cardTitle = TextStyle(font: Font.poppinsSemiBold, color: .mainTxt, fontSize: 16)
     
     static let body1 = TextStyle(font: Font.robotoRegular, color: .mainTxt, fontSize: 16)
     

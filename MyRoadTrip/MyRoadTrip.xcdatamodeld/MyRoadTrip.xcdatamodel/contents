@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23D56" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="LatLongEntity" representedClassName="LatLongEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="latitude" attributeType="String"/>
-        <attribute name="longitude" attributeType="String"/>
-        <relationship name="route" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RouteEntity" inverseName="endLocation" inverseEntity="RouteEntity"/>
+    <entity name="LatLongEntity" representedClassName=".LatLongEntity" syncable="YES">
+        <attribute name="latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="route" maxCount="1" deletionRule="Nullify" destinationEntity="RouteEntity" inverseName="endLocation" inverseEntity="RouteEntity"/>
     </entity>
-    <entity name="RouteEntity" representedClassName="RouteEntity" syncable="YES" codeGenerationType="class">
+    <entity name="RouteEntity" representedClassName=".RouteEntity" syncable="YES">
         <attribute name="destination" attributeType="String"/>
         <attribute name="distance" attributeType="String"/>
         <attribute name="duration" attributeType="String"/>
         <attribute name="origin" attributeType="String"/>
-        <attribute name="warnings" attributeType="Transformable"/>
+        <attribute name="warnings" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName=".[String]"/>
         <attribute name="way" attributeType="String"/>
         <relationship name="endLocation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LatLongEntity" inverseName="route" inverseEntity="LatLongEntity"/>
         <relationship name="steps" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StepEntity" inverseName="route" inverseEntity="StepEntity"/>
         <relationship name="trip" maxCount="1" deletionRule="Nullify" destinationEntity="TripEntity" inverseName="routes" inverseEntity="TripEntity"/>
     </entity>
-    <entity name="StepEntity" representedClassName="StepEntity" syncable="YES" codeGenerationType="class">
+    <entity name="StepEntity" representedClassName=".StepEntity" syncable="YES">
         <attribute name="distance" attributeType="String"/>
         <attribute name="instruction" optional="YES" attributeType="String"/>
         <relationship name="route" maxCount="1" deletionRule="Nullify" destinationEntity="RouteEntity" inverseName="steps" inverseEntity="RouteEntity"/>
     </entity>
-    <entity name="TavelDetailsEntity" representedClassName="TavelDetailsEntity" syncable="YES" codeGenerationType="class">
+    <entity name="TravelDetailsEntity" representedClassName=".TravelDetailsEntity" syncable="YES">
         <attribute name="distance" attributeType="String"/>
         <attribute name="duration" attributeType="String"/>
         <relationship name="trip" maxCount="1" deletionRule="Nullify" destinationEntity="TripEntity" inverseName="travelDetails" inverseEntity="TripEntity"/>
     </entity>
-    <entity name="TripEntity" representedClassName="TripEntity" syncable="YES" codeGenerationType="class">
-        <attribute name="citiesToStep" attributeType="Transformable"/>
+    <entity name="TripEntity" representedClassName=".TripEntity" syncable="YES">
+        <attribute name="citiesToStep" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName=".[String]"/>
         <attribute name="dailyDistance" attributeType="String"/>
         <attribute name="destination" attributeType="String"/>
         <attribute name="origin" attributeType="String"/>
-        <relationship name="routes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RouteEntity" inverseName="trip" inverseEntity="RouteEntity"/>
-        <relationship name="travelDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TavelDetailsEntity" inverseName="trip" inverseEntity="TavelDetailsEntity"/>
+        <relationship name="routes" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="RouteEntity" inverseName="trip" inverseEntity="RouteEntity"/>
+        <relationship name="travelDetails" maxCount="1" deletionRule="Nullify" destinationEntity="TravelDetailsEntity" inverseName="trip" inverseEntity="TravelDetailsEntity"/>
     </entity>
 </model>

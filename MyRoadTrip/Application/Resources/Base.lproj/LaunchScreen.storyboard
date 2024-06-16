@@ -31,6 +31,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.6588235294117647" green="0.85490196078431369" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.011764705882352941" green="0.24313725490196078" blue="0.5490196078431373" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EQB-sU-QCc" firstAttribute="top" secondItem="uod-ED-nkH" secondAttribute="bottom" constant="20" id="CMh-69-S8s"/>
                             <constraint firstItem="EQB-sU-QCc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Gug-kG-FgD"/>

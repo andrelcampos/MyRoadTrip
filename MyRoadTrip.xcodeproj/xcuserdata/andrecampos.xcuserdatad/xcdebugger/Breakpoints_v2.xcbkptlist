@@ -135,38 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2E1310A4-3A0E-4CA7-8804-990413036C3A"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyRoadTrip/Features/Main/NewRoute/CreateRoute/NewRouteViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "tappedSearch(origin:destination:dailyDistance:returnError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B1B650B1-99F7-44FD-8BB6-316D562B7E3E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyRoadTrip/Features/Main/NewRoute/CreateRoute/NewRouteViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "tappedSearch(origin:destination:dailyDistance:returnError:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7092078D-2F17-45B2-96AA-C2FDCCF3C523"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -199,65 +167,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FB29A061-BE28-48AA-B99F-1DE22F316F43"
-            shouldBeEnabled = "No"
+            uuid = "1E310B38-2645-44E4-A8A7-E45C726EEDB7"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyRoadTrip/Features/Main/TripDetails/TripDetailsViewController.swift"
+            filePath = "MyRoadTrip/Features/Main/TripDetails/Models/TripModel+CoreData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "tableView(_:cellForRowAt:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "saveToCoreData()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1E310B38-2645-44E4-A8A7-E45C726EEDB7 - d2f70251e9b0b8c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyRoadTrip.TripModel.saveToCoreData() -&gt; ()"
+                  moduleName = "MyRoadTrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Features/Main/TripDetails/Models/TripModel+CoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "2980">
+               </Location>
+               <Location
+                  uuid = "1E310B38-2645-44E4-A8A7-E45C726EEDB7 - d2f70251e9b0b8c1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyRoadTrip.TripModel.saveToCoreData() -&gt; ()"
+                  moduleName = "MyRoadTrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Features/Main/TripDetails/Models/TripModel+CoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "3180">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "025DFA27-1DC0-4440-9919-E111742E52B8"
+            uuid = "AD6F08D3-E157-44DE-B26D-2C097703D43B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyRoadTrip/Features/Main/TripDetails/TripDetailsViewController.swift"
+            filePath = "MyRoadTrip/Features/Main/TripDetails/Models/TripModel+CoreData.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "init(viewModel:)"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "fetchAllTrips()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "AD6F08D3-E157-44DE-B26D-2C097703D43B - 4db51f55c97025c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MyRoadTrip.TripModel.fetchAllTrips() -&gt; Swift.Array&lt;MyRoadTrip.TripModel&gt;"
+                  moduleName = "MyRoadTrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Features/Main/TripDetails/Models/TripModel+CoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "3660">
+               </Location>
+               <Location
+                  uuid = "AD6F08D3-E157-44DE-B26D-2C097703D43B - 4db51f55c97025c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MyRoadTrip.TripModel.fetchAllTrips() -&gt; Swift.Array&lt;MyRoadTrip.TripModel&gt;"
+                  moduleName = "MyRoadTrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Features/Main/TripDetails/Models/TripModel+CoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "3792">
+               </Location>
+               <Location
+                  uuid = "AD6F08D3-E157-44DE-B26D-2C097703D43B - 4db51f55c97025c2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static MyRoadTrip.TripModel.fetchAllTrips() -&gt; Swift.Array&lt;MyRoadTrip.TripModel&gt;"
+                  moduleName = "MyRoadTrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Features/Main/TripDetails/Models/TripModel+CoreData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "117"
+                  endingLineNumber = "117"
+                  offsetFromSymbolStart = "4092">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9C033958-8B45-433F-8A6C-4FD3A8DA3377"
+            uuid = "9B4E4C6B-8B69-4817-AF63-59B4DEF12A80"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyRoadTrip/Features/Main/NewRoute/CreateRoute/NewRouteViewModel.swift"
+            filePath = "MyRoadTrip/Features/Main/TripDetails/Leg Details/LegDetailsCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
-            landmarkName = "tappedSearch(origin:destination:dailyDistance:returnError:)"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "goToWhatToDo(location:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "62BBE3A2-6872-4B43-B96A-5EF646C3F1A5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyRoadTrip/Features/Main/NewRoute/CreateRoute/NewRouteViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "tappedSearch(origin:destination:dailyDistance:returnError:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9B4E4C6B-8B69-4817-AF63-59B4DEF12A80 - 3b451cab1ddca1d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MyRoadTrip.LegDetailsCoordinator.goToWhatToDo(location: MyRoadTrip.LatLong) -&gt; ()"
+                  moduleName = "MyRoadTrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Features/Main/TripDetails/Leg%20Details/LegDetailsCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "9B4E4C6B-8B69-4817-AF63-59B4DEF12A80 - 54dbfe130d041790"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;MyRoadTrip.GooglePlacesServices.PlaceResponse&gt;) -&gt; () in MyRoadTrip.LegDetailsCoordinator.goToWhatToDo(location: MyRoadTrip.LatLong) -&gt; ()"
+                  moduleName = "MyRoadTrip"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/andrecampos/Desktop/Private/MyRoadTrip/MyRoadTrip/Features/Main/TripDetails/Leg%20Details/LegDetailsCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
