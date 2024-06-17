@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
         let newRouteNavController = UINavigationController(rootViewController: newRouteVC)
         newRouteNavController.tabBarItem = UITabBarItem(title: "Nova Rota", image: UIImage(systemName: "map"), tag: 0)
 
-        let historyVC = HistoryViewController()
+        let historyVC = HistoryViewController(viewModel: HistoryViewModel())
         let historyNavController = UINavigationController(rootViewController: historyVC)
         historyNavController.tabBarItem = UITabBarItem(title: "Histórico", image: UIImage(systemName: "clock"), tag: 1)
         

@@ -69,7 +69,7 @@ class NewRouteViewModel {
                 dispatchGroup.notify(queue: dispatchQueue) {
                     if errorList.isEmpty {
                         returnError(nil)
-//                        trip.saveToCoreData()
+                        trip.saveToCoreData()
                         self?.goToTripDetails?(trip)
                     }
                     else {
