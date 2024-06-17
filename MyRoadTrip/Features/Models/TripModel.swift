@@ -75,7 +75,7 @@ struct RouteModel {
     let distance: String
     let duration: String
     let way: String
-    let warnings: [String]
+    let warnings: [String]?
     let endLocation: LatLong?
     let steps: [StepModel]
 }

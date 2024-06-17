@@ -68,9 +68,13 @@ class NewRouteViewModel {
 
                 dispatchGroup.notify(queue: dispatchQueue) {
                     if errorList.isEmpty {
-                        returnError(nil)
-                        trip.saveToCoreData()
-                        self?.goToTripDetails?(trip)
+                        do{
+                            try trip.saveToCoreData()
+                            returnError(nil)
+                            self?.goToTripDetails?(trip)
+                        }catch {
+                            returnError(error.localizedDescription)
+                        }
                     }
                     else {
                         var strError = "Erros encontrados:"

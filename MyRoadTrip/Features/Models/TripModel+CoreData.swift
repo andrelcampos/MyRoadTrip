@@ -12,7 +12,7 @@ import UIKit
 // MARK: - Save data to CoreData
 extension TripModel {
     
-    func saveToCoreData() {
+    func saveToCoreData() throws {
         let context = CoreDataStack.shared.context
         
         let tripEntity = TripEntity(context: context)
@@ -28,37 +28,36 @@ extension TripModel {
             tripEntity.travelDetails = travelDetailsEntity
         }
         
-        for route in self.routes.values {
-            let routeEntity = RouteEntity(context: context)
-            routeEntity.origin = route.origin
-            routeEntity.destination = route.destination
-            routeEntity.distance = route.distance
-            routeEntity.duration = route.duration
-            routeEntity.way = route.way
-            routeEntity.warnings = route.warnings
-            if let endLocation = route.endLocation {
-                let latLongEntity = LatLongEntity(context: context)
-                latLongEntity.latitude = endLocation.latitude
-                latLongEntity.longitude = endLocation.longitude
-                routeEntity.endLocation = latLongEntity
+        for key in self.routes.keys {
+            if let route = routes[key] {
+                let routeEntity = RouteEntity(context: context)
+                routeEntity.position = Int16(key)
+                routeEntity.origin = route.origin
+                routeEntity.destination = route.destination
+                routeEntity.distance = route.distance
+                routeEntity.duration = route.duration
+                routeEntity.way = route.way
+                routeEntity.warnings = route.warnings
+                if let endLocation = route.endLocation {
+                    let latLongEntity = LatLongEntity(context: context)
+                    latLongEntity.latitude = endLocation.latitude
+                    latLongEntity.longitude = endLocation.longitude
+                    routeEntity.endLocation = latLongEntity
+                }
+                for step in route.steps {
+                    let stepEntity = StepEntity(context: context)
+                    stepEntity.distance = step.distance
+                    stepEntity.instruction = step.instruction
+                    routeEntity.addToSteps(stepEntity)
+                }
+                tripEntity.addToRoutes(routeEntity)
             }
-            for step in route.steps {
-                let stepEntity = StepEntity(context: context)
-                stepEntity.distance = step.distance
-                stepEntity.instruction = step.instruction
-                routeEntity.addToSteps(stepEntity)
-            }
-            tripEntity.addToRoutes(routeEntity)
         }
         
         _tripEntity = tripEntity
         
-        do {
-            try context.save()
-            NotificationCenter.default.post(name: .newTripAdded, object: nil)
-        } catch {
-            print("Failed to save trip: \(error.localizedDescription)")
-        }
+        try context.save()
+        NotificationCenter.default.post(name: .newTripAdded, object: nil)
     }
 }
 
@@ -107,7 +106,7 @@ extension TripModel {
                                                warnings: routeEntity.warnings,
                                                endLocation: endLocation,
                                                steps: steps)
-                        trip.routes[trip.routes.count] = route
+                        trip.routes[Int(routeEntity.position)] = route
                     }
                 }
                 trip._tripEntity = tripEntity

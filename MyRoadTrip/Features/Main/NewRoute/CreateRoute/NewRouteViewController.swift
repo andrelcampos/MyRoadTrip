@@ -206,6 +206,7 @@ class NewRouteViewController: UIViewController, UITextFieldDelegate {
 
     @objc func searchButtonTapped() {
         setLoading(true)
+        view.endEditing(true)
         viewModel.tappedSearch(origin: originTextField.text,
                                destination: destinationTextField.text,
                                dailyDistance: distanceTextField.text) { [weak self] (error)  in

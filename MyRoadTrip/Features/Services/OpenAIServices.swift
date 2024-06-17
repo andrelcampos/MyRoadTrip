@@ -41,8 +41,6 @@ class OpenAIServices {
     // Função para fazer a requisição ao ChatGPT
     func getListOfStopableCitiesTo(origin: String, destination: String, dailyDistance: String, completion: @escaping ([String]?) -> Void) {
         
-        completion(["Canoas", "Santa Maria", "Uruguaiana", "Rosario", "Buenos Aires"])
-        return
         let url = URL(string: "https://api.openai.com/v1/chat/completions")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -53,8 +51,8 @@ class OpenAIServices {
         let prompt = """
     Será realizada uma viagem de carro.
     Crie uma rota, mais direta possível, saindo de \(origin) e indo para \(destination).
-    Você deve sugerir pontos de parada para descanso, dividindo essa rota a cada \(dailyDistance)Km mais ou menos (variação de no máximo 20%).
-    Retornar somente a lista de cidades, não numerada, dos pontos de parada, sendo o primeiro item da lista a cidade de origem.
+    Você deve sugerir pontos de parada para descanso, dividindo essa rota a cada \(dailyDistance)Km mais ou menos (variação de no máximo 20%). A distância entre cada ponto não pode ser maior que \((Double(dailyDistance) ?? 0.0)*1.2).
+    Retornar somente a lista de cidades, não numerada, dos pontos de parada, sendo o primeiro item da lista a cidade de origem. Cada cidade deve estar em uma linha, com estado, em caso de cidades brasileiras, ou país em caso de cidades estrangeiras.
     """
                 
         // Definindo a chamada da função
@@ -89,7 +87,7 @@ class OpenAIServices {
                 if let responseMessage = chatResponse.choices.first?.message.content {
                     let listResponse: [String]
                     if responseMessage.contains("\n") {
-                        listResponse = responseMessage.removing(["-", ",", "."]).getArray(separatedBy: "\n")
+                        listResponse = responseMessage.removing(["-", "."]).getArray(separatedBy: "\n")
                     }
                     else if responseMessage.contains(",") {
                         listResponse = responseMessage.removing(["-", "."]).getArray(separatedBy: ",")

@@ -139,7 +139,8 @@ class PlaceTableViewCell: UITableViewCell {
     
     func configure(with place: Place, siteAction: StringVoid?, googleAction: StringVoid?, driveAction: LocationVoid?) {
         nameLabel.text = place.displayName.text
-        ratingLabel.text = "Nota: \(place.rating)"
+        ratingLabel.text = "Nota: \(place.rating ?? 0)"
+        ratingLabel.isHidden = place.rating == nil
         addressLabel.text = place.shortFormattedAddress.isEmpty ? place.shortFormattedAddress : place.formattedAddress
         let phone = place.nationalPhoneNumber ?? place.internationalPhoneNumber
         phoneLabel.text = phone

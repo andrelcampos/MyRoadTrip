@@ -126,7 +126,7 @@ struct Place: Decodable {
     let nationalPhoneNumber: String?
     let internationalPhoneNumber: String?
     let location: LatLong
-    let rating: Double
+    let rating: Double?
     let googleMapsUri: String
     let websiteUri: String?
 }

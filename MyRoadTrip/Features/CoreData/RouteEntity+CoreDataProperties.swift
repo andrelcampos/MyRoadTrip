@@ -21,7 +21,8 @@ extension RouteEntity {
     @NSManaged public var duration: String
     @NSManaged public var way: String
     @NSManaged public var distance: String
-    @NSManaged public var warnings: [String]
+    @NSManaged public var warnings: [String]?
+    @NSManaged public var position: Int16
     @NSManaged public var endLocation: LatLongEntity?
     @NSManaged public var trip: TripEntity?
     @NSManaged public var steps: NSOrderedSet?

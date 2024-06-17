@@ -18,10 +18,6 @@ class GoogleRoutesServices {
     // MARK: Static methods
     func getGeneralRoute(from cities: [String], completion: @escaping (Route?) -> Void) {
         
-        completion(Route(localizedValues: LocalizedValues(staticDuration: LocalizedText(text: "15 horas e 39 minutos"),
-                                                          distance: LocalizedText(text: "1.315 Km"),
-                                                          duration: nil)))
-        return
         var request = getRequest()
         request.setValue("routes.localizedValues", forHTTPHeaderField: "X-Goog-FieldMask")
         
@@ -67,18 +63,6 @@ class GoogleRoutesServices {
     }
     
     func getDetailedRoute(from origin: String, to destination: String, completion: @escaping (DetailedRouteResponse?) -> Void) {
-        
-        let localized = LocalizedValues(staticDuration: LocalizedText(text:"5 horas e 10 minutos"),
-                                        distance: LocalizedText(text:"432 km"), duration: nil)
-        let step = Step(localizedValues: localized, navigationInstruction: NavigationInstruction(instructions: "Vire à direita em algum momento"))
-        let leg = Leg(localizedValues: localized, steps: [step, step, step],
-                      endLocation: Location(latLng: LatLong(latitude: -29.689, longitude: -53.7923)))
-        let route = DetailedRoute(localizedValues: localized, legs: [leg], warnings: ["A rota contém pedágios"], description: "BR 116")
-        let response = DetailedRouteResponse(routes: [route, route])
-        completion(response)
-        return
-        
-        
         
         var request = getRequest()
         request.setValue("routes.localizedValues,routes.legs,routes.warnings,routes.description", forHTTPHeaderField: "X-Goog-FieldMask")
@@ -194,7 +178,7 @@ extension GoogleRoutesServices {
     struct DetailedRoute: Decodable {
         let localizedValues: LocalizedValues
         let legs: [Leg]
-        let warnings: [String]
+        let warnings: [String]?
         let description: String
     }
     
