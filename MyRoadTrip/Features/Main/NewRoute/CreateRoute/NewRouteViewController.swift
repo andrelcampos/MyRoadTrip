@@ -91,11 +91,6 @@ class NewRouteViewController: UIViewController, UITextFieldDelegate {
 
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
         distanceTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-        self.originTextField.text = "Canoas"
-        self.destinationTextField.text = "Buenos Aires"
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.searchButtonTapped()
-        }
     }
 
     // MARK: Methods

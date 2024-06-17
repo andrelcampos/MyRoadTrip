@@ -10,7 +10,7 @@ import UIKit
 
 class MainTabBarController: UITabBarController {
 
-    var showOnboarding = false // MUDAR PARA TRUE APÓS TERMINAR CONFIGURAÇÃO
+    var showOnboarding = true
  
     override func viewDidLoad() {
         super.viewDidLoad()
