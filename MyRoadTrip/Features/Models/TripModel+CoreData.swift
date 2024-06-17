@@ -55,6 +55,7 @@ extension TripModel {
         
         do {
             try context.save()
+            NotificationCenter.default.post(name: .newTripAdded, object: nil)
         } catch {
             print("Failed to save trip: \(error.localizedDescription)")
         }
