@@ -57,7 +57,6 @@ extension TripModel {
         let distance: String
         let duration: String
     }
-    
 }
 
 extension TripModel.TravelDetails {

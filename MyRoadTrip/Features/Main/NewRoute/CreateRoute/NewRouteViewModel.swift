@@ -21,21 +21,21 @@ class NewRouteViewModel {
         guard let destination = destination else { returnError("Destino não pode ser vazio"); return }
         guard let dailyDistance = dailyDistance else { returnError("Distância deve ser entre 100 e 1000 KMs"); return }
         
-        // create TripModel with user data
+        // Cria TripModel com dados do usuário
         let trip = TripModel(origin: origin, destination: destination, dailyDistance: dailyDistance)
         
-        // get list of cities to travel by
+        // Busca a lista de cidades por onde a viagem passará (Chat GPT)
         gptService.getListOfStopableCitiesTo(origin: origin, destination: destination, dailyDistance: dailyDistance) { [weak self, routeService, returnError] list in
             guard let list = list else { returnError("Erro ao buscar lista de cidades"); return }
             
-            // update TripModel with waypoints for the trip
+            // Atualiza TripModel com cidades da viagem
             trip.configCities(cities: list)
             
-            // get infos to general route
+            // Busca informações gerais da rota
             routeService.getGeneralRoute(from: list) { [weak self, routeService, trip, returnError] route in
                 guard let route = route else { returnError("Erro ao buscar dados gerais da rota"); return }
                 
-                // update TripModel with general route infos
+                // Atualiza TripModel com informações gerais da rota
                 trip.configDetails(route: route)
                 
                 let dispatchGroup = DispatchGroup()
@@ -69,8 +69,10 @@ class NewRouteViewModel {
                 dispatchGroup.notify(queue: dispatchQueue) {
                     if errorList.isEmpty {
                         do{
+                            // Salva dados da viagem no histórico
                             try trip.saveToCoreData()
                             returnError(nil)
+                            // Direciona para a tela de detalhes da viagem
                             self?.goToTripDetails?(trip)
                         }catch {
                             returnError(error.localizedDescription)
