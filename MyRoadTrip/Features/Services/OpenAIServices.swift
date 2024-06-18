@@ -9,7 +9,7 @@ import Foundation
 
 class OpenAIServices {
     
-    let justKey = "7tYoDmksiDoiVyQIjH9jJFkblB3TR9lDoxD0a8rVCVsaYx6C-jorp-ks".localized()
+    let justKey = "".localized()
     let modelID = "gpt-4o"
     
     // Estrutura para definir as mensagens de usuário
