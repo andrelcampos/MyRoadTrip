@@ -11,7 +11,7 @@ import Foundation
 class GoogleRoutesServices {
     
     // MARK: Static variables
-    let justKey = "".localized()
+    let justKey = googleKey
     static let travelMode = "DRIVE"
     static let languageCode = "pt-BR"
     

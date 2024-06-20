@@ -11,7 +11,7 @@ import Foundation
 class GooglePlacesServices {
     
     // MARK: Static variables
-    static let justKey = "".localized()
+    static let justKey = googleKey
     static let languageCode = "pt-BR"
     static let rankPreference = "POPULARITY"
     static let radius: Double = 10000
