@@ -16,7 +16,7 @@ class MainTabBarController: UITabBarController {
         super.viewDidLoad()
 
         let newRouteVC = NewRouteViewController()
-        let coordinator = NewRouteCoordinator(controller: newRouteVC)
+        _ = NewRouteCoordinator(controller: newRouteVC)
         let newRouteNavController = UINavigationController(rootViewController: newRouteVC)
         newRouteNavController.tabBarItem = UITabBarItem(title: "Nova Rota", image: UIImage(systemName: "map"), tag: 0)
 
